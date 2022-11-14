@@ -1,8 +1,8 @@
 # SwiftUI-Combine-Swinject
 
-## Project details: 
+## project details: 
 
-This porject hits the iTunes API (https://itunes.apple.com/search/song&term=) and displays the search results.
+This project hits the iTunes API (https://itunes.apple.com/search/song&term=) and displays the search results.
 
 ## Tech stack:
 
