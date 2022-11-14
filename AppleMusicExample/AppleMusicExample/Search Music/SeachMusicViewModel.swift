@@ -10,22 +10,22 @@ import Combine
 import UIKit
 
 class SearchMusicViewModel: ObservableObject {
-    
+        
     private var cancellable: AnyCancellable?
     private var imageCancellable: AnyCancellable?
-    let repository = WebService()
+    let repository = DependencyManager.shared.container.resolve(WebServiceType.self)
     @Published var tracks = [TrackDetails]()
     @Published var image = UIImage()
     
     func fetchSearch(track: String) {
-        cancellable = repository.searchFor(track: "Drake")
+        cancellable = repository?.searchFor(track: "led+zeplin")
             .sink(receiveCompletion: { _ in }, receiveValue: { value in
                 self.tracks = value.results!
             })
     }
     
     func fetchAlbumArt(url: String) {
-        imageCancellable = repository.downloadImage(url: url)
+        imageCancellable = repository?.downloadImage(url: url)
             .sink(receiveCompletion: { _ in }, receiveValue: { value in
                 self.image = value ?? UIImage()
             })
