@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		270EC75128F321AD00D55D25 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270EC75028F321AD00D55D25 /* ImageLoader.swift */; };
 		270EC75328F323BF00D55D25 /* URLImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270EC75228F323BF00D55D25 /* URLImage.swift */; };
+		271C60022922B3E600A6D070 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 271C60012922B3E600A6D070 /* Swinject */; };
 		2754323728F1DF3D00E2DF4B /* AppleMusicExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2754323628F1DF3D00E2DF4B /* AppleMusicExampleApp.swift */; };
 		2754323928F1DF3D00E2DF4B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2754323828F1DF3D00E2DF4B /* ContentView.swift */; };
 		2754323B28F1DF3D00E2DF4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2754323A28F1DF3D00E2DF4B /* Assets.xcassets */; };
@@ -16,8 +17,6 @@
 		2754324628F1E05600E2DF4B /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2754324528F1E05600E2DF4B /* WebService.swift */; };
 		2754324928F1EE3900E2DF4B /* SeachMusicViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2754324828F1EE3900E2DF4B /* SeachMusicViewModel.swift */; };
 		2754324C28F1FC5500E2DF4B /* TrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2754324B28F1FC5500E2DF4B /* TrackCell.swift */; };
-		276A83272919963E002FC9C8 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 276A83262919963E002FC9C8 /* Swinject */; };
-		276A83292919963E002FC9C8 /* Swinject-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 276A83282919963E002FC9C8 /* Swinject-Dynamic */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,8 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				276A83272919963E002FC9C8 /* Swinject in Frameworks */,
-				276A83292919963E002FC9C8 /* Swinject-Dynamic in Frameworks */,
+				271C60022922B3E600A6D070 /* Swinject in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,8 +133,7 @@
 			);
 			name = AppleMusicExample;
 			packageProductDependencies = (
-				276A83262919963E002FC9C8 /* Swinject */,
-				276A83282919963E002FC9C8 /* Swinject-Dynamic */,
+				271C60012922B3E600A6D070 /* Swinject */,
 			);
 			productName = AppleMusicExample;
 			productReference = 2754323328F1DF3D00E2DF4B /* AppleMusicExample.app */;
@@ -167,7 +164,7 @@
 			);
 			mainGroup = 2754322A28F1DF3D00E2DF4B;
 			packageReferences = (
-				276A83252919963E002FC9C8 /* XCRemoteSwiftPackageReference "Swinject" */,
+				271C60002922B3E600A6D070 /* XCRemoteSwiftPackageReference "Swinject" */,
 			);
 			productRefGroup = 2754323428F1DF3D00E2DF4B /* Products */;
 			projectDirPath = "";
@@ -404,26 +401,21 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		276A83252919963E002FC9C8 /* XCRemoteSwiftPackageReference "Swinject" */ = {
+		271C60002922B3E600A6D070 /* XCRemoteSwiftPackageReference "Swinject" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Swinject/Swinject.git";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.0;
+				kind = exactVersion;
+				version = 2.7.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		276A83262919963E002FC9C8 /* Swinject */ = {
+		271C60012922B3E600A6D070 /* Swinject */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 276A83252919963E002FC9C8 /* XCRemoteSwiftPackageReference "Swinject" */;
+			package = 271C60002922B3E600A6D070 /* XCRemoteSwiftPackageReference "Swinject" */;
 			productName = Swinject;
-		};
-		276A83282919963E002FC9C8 /* Swinject-Dynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 276A83252919963E002FC9C8 /* XCRemoteSwiftPackageReference "Swinject" */;
-			productName = "Swinject-Dynamic";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

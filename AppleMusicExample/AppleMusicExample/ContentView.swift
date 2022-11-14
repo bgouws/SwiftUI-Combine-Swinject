@@ -18,7 +18,7 @@ struct ContentView: View {
                     TrackCell(track: track)
                 }
             }.onAppear {
-                viewModel.fetchSearch(track: "Drake")
+                viewModel.fetchSearch(track: "led+zeplin")
             }
             .padding(.top, 1)
             .navigationViewStyle(StackNavigationViewStyle())

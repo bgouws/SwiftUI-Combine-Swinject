@@ -11,6 +11,7 @@ import Combine
 
 protocol WebServiceType {
     func searchFor(track: String ) -> AnyPublisher<TrackModel, Error>
+    func downloadImage(url: String) -> AnyPublisher<UIImage?, URLError>
 }
 
 final class WebService: WebServiceType {
@@ -41,7 +42,7 @@ struct TrackModel: Codable {
 
 struct TrackDetails: Codable, Identifiable {
     
-    var id = UUID()
+    let id = UUID()
     var artistName: String?
     var trackName: String?
     var artworkUrl100: String?
