@@ -17,6 +17,7 @@
 		2754324628F1E05600E2DF4B /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2754324528F1E05600E2DF4B /* WebService.swift */; };
 		2754324928F1EE3900E2DF4B /* SeachMusicViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2754324828F1EE3900E2DF4B /* SeachMusicViewModel.swift */; };
 		2754324C28F1FC5500E2DF4B /* TrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2754324B28F1FC5500E2DF4B /* TrackCell.swift */; };
+		B68E96C629E802A300AF0083 /* SearchTrack.json in Resources */ = {isa = PBXBuildFile; fileRef = B68E96C529E802A300AF0083 /* SearchTrack.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,8 @@
 		2754324528F1E05600E2DF4B /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		2754324828F1EE3900E2DF4B /* SeachMusicViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeachMusicViewModel.swift; sourceTree = "<group>"; };
 		2754324B28F1FC5500E2DF4B /* TrackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCell.swift; sourceTree = "<group>"; };
+		B68E96C529E802A300AF0083 /* SearchTrack.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SearchTrack.json; sourceTree = "<group>"; };
+		B68E96C729E8074D00AF0083 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +74,8 @@
 		2754323528F1DF3D00E2DF4B /* AppleMusicExample */ = {
 			isa = PBXGroup;
 			children = (
+				B68E96C729E8074D00AF0083 /* Info.plist */,
+				B68E96C429E801DE00AF0083 /* Stubs */,
 				270EC75428F3260700D55D25 /* Helpers */,
 				2754324A28F1FC2800E2DF4B /* Views */,
 				2754324428F1E04600E2DF4B /* Web Service */,
@@ -114,6 +119,14 @@
 				270EC75228F323BF00D55D25 /* URLImage.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		B68E96C429E801DE00AF0083 /* Stubs */ = {
+			isa = PBXGroup;
+			children = (
+				B68E96C529E802A300AF0083 /* SearchTrack.json */,
+			);
+			path = Stubs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,6 +194,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2754323E28F1DF3D00E2DF4B /* Preview Assets.xcassets in Resources */,
+				B68E96C629E802A300AF0083 /* SearchTrack.json in Resources */,
 				2754323B28F1DF3D00E2DF4B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -330,6 +344,7 @@
 				DEVELOPMENT_TEAM = 5MTYPG5Y83;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AppleMusicExample/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -340,11 +355,13 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				"OTHER_SWIFT_FLAGS[arch=*]" = "-DDEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = za.co.uppereastsolutions.bmicalculator.AppleMusicExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = NO;
 			};
 			name = Debug;
 		};
@@ -359,6 +376,7 @@
 				DEVELOPMENT_TEAM = 5MTYPG5Y83;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AppleMusicExample/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -374,6 +392,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};

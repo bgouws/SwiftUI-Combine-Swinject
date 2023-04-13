@@ -17,12 +17,28 @@ protocol WebServiceType {
 final class WebService: WebServiceType {
     
     func searchFor(track: String) -> AnyPublisher<TrackModel, Error> {
+        #if DEBUG
+        if let isStubbed = Bundle.main.object(forInfoDictionaryKey: "iSStubbed") as? Bool,
+           isStubbed {
+            return Bundle.main.decodeable(fileName: "SearchTrack.json")
+                .receive(on: RunLoop.main)
+                .eraseToAnyPublisher()
+        } else {
+            guard let url = URL(string: "https://itunes.apple.com/search/song&term=led+zeplin") else { fatalError("Could not create url") }
+            return URLSession.shared.dataTaskPublisher(for: url)
+                .receive(on: RunLoop.main)
+                .map(\.data)
+                .decode(type: TrackModel.self, decoder: JSONDecoder())
+                .eraseToAnyPublisher()
+        }
+        #else
         guard let url = URL(string: "https://itunes.apple.com/search/song&term=led+zeplin") else { fatalError("Could not create url") }
         return URLSession.shared.dataTaskPublisher(for: url)
             .receive(on: RunLoop.main)
             .map(\.data)
             .decode(type: TrackModel.self, decoder: JSONDecoder())
             .eraseToAnyPublisher()
+        #endif
     }
     
     func downloadImage(url: String) -> AnyPublisher<UIImage?, URLError> {
@@ -46,4 +62,30 @@ struct TrackDetails: Codable, Identifiable {
     var artistName: String?
     var trackName: String?
     var artworkUrl100: String?
+}
+
+extension Bundle {
+    
+    func readFile(file: String) -> AnyPublisher<Data, Error> {
+        self.url(forResource: file, withExtension: nil)
+            .publisher
+            .tryMap{ string in
+                guard let data = try? Data(contentsOf: string) else {
+                    fatalError("Failed to load \(file) from bundle.")
+                }
+                return data
+            }
+            .mapError { error in
+                return error
+            }.eraseToAnyPublisher()
+    }
+    
+    func decodeable(fileName: String) -> AnyPublisher<TrackModel, Error> {
+        readFile(file: fileName)
+            .decode(type: TrackModel.self, decoder: JSONDecoder())
+            .mapError { error in
+                return error
+            }
+            .eraseToAnyPublisher()
+    }
 }
